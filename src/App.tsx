@@ -7,13 +7,13 @@ function App() {
 
   return (
     <><div className="container">
-      <div className="row" >
+      <div className="row row align-items-center"  >
       <div className="col-6">
-      <h1>Mind And Body</h1>
+      <h1 className="m-4 align-middle b" >Mind And Body</h1>
       </div>
       <div className="col-sm-6">
           <a>
-          <img src={yogaImage}  alt="Yoga Pic" width="500px" height="400px"  />
+          <img src={yogaImage}  alt="Yoga Pic" height="400px" className="m-4 align-middle" />
         </a>
         </div>
       </div>
