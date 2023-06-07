@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-import MainHeader from './MainHeader.tsx'
+import MainHeader from './Views/MainHeader.tsx'
+import NavBar from './Views/NavBar.tsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <NavBar />
     <MainHeader />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
