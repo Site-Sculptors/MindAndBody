@@ -10,6 +10,7 @@ function App() {
       <div className="row row align-items-center"  >
       <div className="col-6">
       <h1 className="m-4 align-middle b" >Mind And Body</h1>
+      <h5 className="m-4 align-middle b" >Become a better version of yourself</h5>
       </div>
       <div className="col-sm-6">
           <a>
