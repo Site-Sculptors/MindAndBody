@@ -1,7 +1,7 @@
 import yogaImage from '/mind_and_body_yoga.jpg'
 import { useState } from 'react'
 
-function Main() {
+export default function Home() {
 
   const [count, setCount] = useState(0)
   return (
@@ -26,5 +26,3 @@ function Main() {
     </div>
   )
 }
-
-export default Main
