@@ -8,8 +8,8 @@ function NavBar() {
 <a className="nav-item nav-link mx-4" href="">Recipes</a>
 <a className="nav-item nav-link mx-4" href="">Workouts</a>
 <a className="nav-item nav-link mx-4" href="">About</a>
-<a className="nav-item nav-link mx-4" href="">Contact</a>
-<a className="nav-item nav-link mr-2 ml-5" href="">Sign In</a>
+<a className="nav-item nav-link ms-4 me-5" href="">Contact</a>
+<a className="nav-item nav-link me-2 ms-5" href="">Sign In</a>
 </nav>
 
     )}
