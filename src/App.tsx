@@ -1,30 +1,30 @@
 
 import './App.css'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-import Footer from './Views/Footer'
-import Header from './Views/Header'
-import About from './Views/About'
-import Contact from './Views/Contact'
-import Home from './Views/Home'
-import Workouts from './Views/Workouts'
-import Recipes from './Views/Recipes'
+import Footer from './Components/Footer'
+import Header from './Components/Header'
+import About from './Pages/About'
+import Contact from './Pages/Contact'
+import Home from './Pages/Home'
+import Workouts from './Pages/Workouts'
+import Recipes from './Pages/Recipes'
+import Signin from './Pages/Signin'
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Recipes" element={<Recipes />} />
-          <Route path="/Workouts" element={<Workouts />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/workouts" element={<Workouts />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/signin" element={<Signin />} />
+      </Routes>
+      <Footer />
     </>
   )
 }
