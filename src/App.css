@@ -1,4 +1,9 @@
-nav, footer{
+footer, nav{
     background-color: #FFBAA7;
+}
+
+.nav-link:hover {
+    font-weight: bold;
+    font-size: 93%;
 }
 
