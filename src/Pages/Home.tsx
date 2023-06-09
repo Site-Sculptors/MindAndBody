@@ -7,13 +7,13 @@ export default function Home() {
   return (
     <div className="container">
       <div className="row row align-items-center mt-5"  >
-        <div className="col-6">
-          <h1 className="m-4 align-middle b" >Mind And Body</h1>
-          <h5 className="m-4 align-middle b" >Become a better version of yourself</h5>
+        <div className="col-12 col-md-6 mt-5 ">
+          <h1 className="mb-0 align-middle  fw-bolder" >Mind And Body</h1>
+          <h5 className="mb-2 mt-0 align-middle" >Become a better version of yourself</h5>
         </div>
-        <div className="col-sm-6">
+        <div className="col-12 col-md-6">
           <a>
-            <img src={yogaImage} alt="Yoga Pic" height="400px" className="m-4 img-fluid rounded hover-overlay" />
+            <img src={yogaImage} alt="Yoga Pic" height="400px" className="img-fluid rounded hover-overlay" />
           </a>
         </div>
       </div>
