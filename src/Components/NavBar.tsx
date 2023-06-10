@@ -1,8 +1,16 @@
-import { NavLink } from "react-router-dom";
+import "../Styles/Header.css";
+//import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "/mind_and_body_logo.png";
 
 export default function NavBar() {
   const isActive = (path: string) => window.location.pathname === path;
+
+  const location = useLocation();
+  /* const [extendNavbar, setExtendNavbar] = useState(false);
+  useEffect(() => {
+    setExtendNavbar(false);
+  }, [location]); */
 
   return (
     <>
@@ -22,7 +30,10 @@ export default function NavBar() {
           data-bs-target="#navbarTogglerDemo03"
           aria-controls="navbarTogglerDemo03"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+          onClick={() => {
+            setExtendNavbar((curr) => !curr);
+          }}>
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
