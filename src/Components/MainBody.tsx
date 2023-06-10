@@ -12,6 +12,7 @@ export default function MainBody() {
   return (
     <div className="m-5">
       <Routes>
+        <Route path="*" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/eatright" element={<EatRight />} />
         <Route path="/workouts" element={<Workouts />} />
