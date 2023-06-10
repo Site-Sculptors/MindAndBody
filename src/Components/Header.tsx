@@ -1,11 +1,5 @@
-
-import NavBar from '../Components/NavBar.tsx'
-
+import NavBar from "../Components/NavBar.tsx";
 
 export default function Header() {
-
-    return (
-        <NavBar />
-
-    )
+  return <NavBar />;
 }
