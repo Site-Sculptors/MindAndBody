@@ -1,10 +1,13 @@
 import "../Styles/Footer.css";
 
-export default function Footer() {
+const Footer = () => {
+
+  const year = new Date().getFullYear() + " ";
+
   return (
     <footer className="fixed-bottom text-center">
       <p className="align-middle my-2">
-        Copyright 2023{" "}
+        Copyright © {year}
         <a href="https://sitesculptors.com" target="_blank">
           Site Sculptors
         </a>{" "}
@@ -13,3 +16,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;
