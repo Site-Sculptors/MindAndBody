@@ -15,6 +15,10 @@ const SigninForm = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control required />
                         </Form.Group>
+                        <Stack direction="horizontal" >
+                            <button type="submit" className="m-2" >Sign In</button>
+                            <button type="button" className="m-2"  >Cancel</button>
+                        </Stack>
                     </Col>
                 </Row>
             </Stack>
