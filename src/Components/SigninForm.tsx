@@ -1,4 +1,5 @@
 import { Col, Form, Row, Stack } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const SigninForm = () => {
 
@@ -17,7 +18,10 @@ const SigninForm = () => {
                         </Form.Group>
                         <Stack direction="horizontal" className="align-center">
                             <button type="submit" className="btn btn-success m-3" >Sign In</button>
-                            <button type="button" className="btn btn-danger m-3"  >Cancel</button>
+                            <NavLink to="/" className={`nav-item nav-link mx-4 `}>
+                                <button type="button" className="btn btn-danger m-3"  >Cancel</button>
+                            </NavLink>
+
                         </Stack>
                     </Col>
                 </Row>
