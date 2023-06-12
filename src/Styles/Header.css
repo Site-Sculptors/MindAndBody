@@ -1,8 +1,21 @@
-nav {
+.navbar {
   background-image: linear-gradient(170deg, #f8d3c9, #ff977d);
+  height: 40px !important;
+}
+
+.nav-link {
+  color: black !important;
 }
 
 .nav-link:hover {
   font-weight: bold;
   font-size: 93%;
+}
+
+.navbar-toggler {
+  scale: 75% !important;
+}
+
+.navbar-toggler :hover{
+  fill : black !important;
 }

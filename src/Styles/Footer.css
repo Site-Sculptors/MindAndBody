@@ -1,5 +1,6 @@
 footer {
-  background-image: linear-gradient(170deg, #f8d3c9, #ff977d);
+  background-image: linear-gradient(170deg, #f8d3c9, #ff977d);  
+  height: 40px;
 }
 
 /* unvisited link 
