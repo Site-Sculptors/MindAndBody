@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import Home from "../Pages/Home";
@@ -10,7 +9,7 @@ import Recipes from "../Pages/Recipes";
 
 export default function MainBody() {
   return (
-    <div className="m-5">
+    <div className="m-0 p-0">
       <Routes>
         <Route path="*" element={<Home />} />
         <Route path="/" element={<Home />} />
