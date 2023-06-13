@@ -1,4 +1,5 @@
 import ListGroup from "../Components/ListGroup.tsx";
+import RecipeCard from "../Components/RecipeCard.tsx";
 import { useState } from "react";
 
 export default function Recipes() {
@@ -22,13 +23,11 @@ export default function Recipes() {
         </div>
       </div>
       <div className="row m-5">
-        <div className="col-auto">
+        <div className="col-auto mx-5">
           <ListGroup items={appetizers} heading="Appetizers" onSelectItem={handleSelectedRecipe} />
           <ListGroup items={desserts} heading="Desserts" onSelectItem={handleSelectedRecipe} />
         </div>
-        <div className="col ">
-          <h5 className="col text-center align-start">{selectedRecipe}</h5>
-        </div>
+        <RecipeCard title={selectedRecipe} />
 
       </div>
     </>
