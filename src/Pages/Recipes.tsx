@@ -16,12 +16,12 @@ export default function Recipes() {
 
   return (
     <>
-      <div className="row align-items-center mt-5">
+      <div className="row align-items-center m-5">
         <div className="col">
           <h1 className="m-3 text-center a b">Healthier Recipes</h1>
         </div>
       </div>
-      <div className="row">
+      <div className="row m-5">
         <div className="col-auto">
           <ListGroup items={appetizers} heading="Appetizers" onSelectItem={handleSelectedRecipe} />
           <ListGroup items={desserts} heading="Desserts" onSelectItem={handleSelectedRecipe} />

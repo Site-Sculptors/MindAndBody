@@ -17,7 +17,7 @@ export default function NavBar() {
 
   return (
     <>
-      <Nav className="navbar navbar-expand-md fixed-top p-0 p-md-3 align-items-center">
+      <Nav className="navbar navbar-expand-md fixed-top mb-0 p-0 p-md-3 align-items-center">
         <Stack direction="horizontal" gap={0} mx-0 >
           <p className="my-0 align-middle">Mind</p>
           <img
