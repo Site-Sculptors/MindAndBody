@@ -1,5 +1,5 @@
 export interface ListGroupProps {
-    items: string[];
     heading: string;
+    items: string[];
     onSelectItem: (item: string) => void;
 }

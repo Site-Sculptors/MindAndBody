@@ -10,3 +10,7 @@
 .list-group{
   cursor: pointer;
 }
+
+.recipe-card{
+  background-color:rgba(0,0,0,0.05) !important;
+}
