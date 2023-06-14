@@ -7,7 +7,7 @@ import Loader from './Loader';
  */
 import React from 'react'
 import { useEffect, useState } from "react";
-import { Stack, Pagination } from "react-bootstrap";
+import { Stack, Pagination, Button } from "react-bootstrap";
 import { exerciseOptions, GetData } from '../Services/GetData.tsx';
 import ExerciseCard from '../Components/ExerciseCard';
 import { ExercisesProps } from "../Interfaces/exercises.interface";
@@ -43,24 +43,40 @@ const Exercises: React.FC<ExercisesProps> = ({ exercises = [], setExercises, bod
     const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
     const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
 
-    const paginate = (event, value) => {
-        setCurrentPage(value);
-
-        window.scrollTo({ top: 1800, behavior: 'smooth' });
-    };
+    /*   const paginate = (event, value) => {
+          setCurrentPage(value);
+  
+          window.scrollTo({ top: 1800, behavior: 'smooth' });
+      }; */
 
     if (!currentExercises.length) return <Loader />;
 
     return (
-        <div>
+        <div className="p-2">
             <h1>Workouts</h1>
             {exercises.length === 0 && <p>No items found</p>}
 
-            <Stack direction="horizontal" gap={4} className="wrap  justifyContent-center" >
+            <Stack direction="horizontal" gap={4} className="no-wrap  justifyContent-center" >
                 {currentExercises.map((exercise, idx) => (
                     <ExerciseCard key={idx} exercise={exercise} className="m-5" />
                 ))}
+            </Stack><Stack className="alignItems-center">
+                {exercises.length > 9 && (
+                    <Pagination size="lg" className="d-flex justify-content-center">
+                        {currentPage}
+                    </Pagination>
+                )}
             </Stack>
+            {/* <Stack direction="horizontal" gap={2} className='text-center justifyContent-center mt-5'>
+                <Button >Previous</Button>
+                <Button >Next</Button>
+            </Stack> */}
+            <div className="text-center">
+                <div id="button-container" className="btn-group">
+                    <button className="btn btn-primary me-1">Previous</button>
+                    <button className="btn btn-primary px-4">Next</button>
+                </div>
+            </div>
         </div>
     );
 }
