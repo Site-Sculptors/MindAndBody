@@ -1,5 +1,5 @@
 export interface ExercisesProps {
   exercises: string[]; // Corrected interface definition
-  setExercises: (setExercises: React.Dispatch<React.SetStateAction<string[]>>) => void;
+  setExercises: React.Dispatch<React.SetStateAction<string[]>>;
   bodyPart: string;
 }

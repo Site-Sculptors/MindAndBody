@@ -3,7 +3,9 @@ import Exercises from '../Components/Exercises';
 
 const Workouts = () => {
 
-  const [exercises, setExercises] = useState([]);
+  // const [exercises, setExercises] = useState([]);
+
+  const [exercises, setExercises] = useState<string[]>([]);
   const [bodyPart, setBodyPart] = useState('all');
 
   return (

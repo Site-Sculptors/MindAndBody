@@ -1,10 +1,3 @@
-/* import { useEffect, useState } from "react";
-import { Stack, Button, Pagination } from "react-bootstrap";
-import { exerciseOptions, GetData } from '../Services/GetData.tsx';
-import ExerciseCard from '../Components/ExerciseCard';
-import { ExercisesProps } from "../Interfaces/exercises.interface";
-import Loader from './Loader';
- */
 import React from 'react'
 import { useEffect, useState } from "react";
 import { Stack, Pagination, Button } from "react-bootstrap";
@@ -13,12 +6,8 @@ import ExerciseCard from '../Components/ExerciseCard';
 import { ExercisesProps } from "../Interfaces/exercises.interface";
 import Loader from './Loader';
 
-/* interface ExercisesProps {
-    exercises: string[]; // Corrected interface definition
-    setExercises: (setExercises: React.Dispatch<React.SetStateAction<string[]>>) => void;
-    bodyPart: string;
-} */
 const Exercises: React.FC<ExercisesProps> = ({ exercises = [], setExercises, bodyPart }) => {
+    //   const { exercises = [], setExercises, bodyPart } = exercise;
     const [currentPage, setCurrentPage] = useState(1);
     const [exercisesPerPage] = useState(6);
 
@@ -58,9 +47,10 @@ const Exercises: React.FC<ExercisesProps> = ({ exercises = [], setExercises, bod
 
             <Stack direction="horizontal" gap={4} className="no-wrap  justifyContent-center" >
                 {currentExercises.map((exercise, idx) => (
-                    <ExerciseCard key={idx} exercise={exercise} className="m-5" />
+                    <ExerciseCard key={idx} cardProp={exercise} />
                 ))}
-            </Stack><Stack className="alignItems-center">
+            </Stack>
+            <Stack className="alignItems-center">
                 {exercises.length > 9 && (
                     <Pagination size="lg" className="d-flex justify-content-center">
                         {currentPage}
@@ -73,8 +63,8 @@ const Exercises: React.FC<ExercisesProps> = ({ exercises = [], setExercises, bod
             </Stack> */}
             <div className="text-center">
                 <div id="button-container" className="btn-group">
-                    <button className="btn btn-primary me-1">Previous</button>
-                    <button className="btn btn-primary px-4">Next</button>
+                    <Button className="btn btn-primary me-1">Previous</Button>
+                    <Button className="btn btn-primary px-4">Next</Button>
                 </div>
             </div>
         </div>
