@@ -1,10 +1,19 @@
-export default function Workouts() {
+import React, { useState } from 'react';
+import Exercises from '../Components/Exercises';
+
+const Workouts = () => {
+
+  const [exercises, setExercises] = useState([]);
+  const [bodyPart, setBodyPart] = useState('all');
+
   return (
-    <div className="row row align-items-center m-5">
-      <div className="col-6">
-        <h1 className="m-4 align-middle b">Workouts</h1>
-      </div>
-    </div>
-  );
-}
+    <>
+      <h1>Workouts</h1>
+      {/* <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} /> */}
+      <Exercises exercises={exercises} setExercises={setExercises} bodyPart={bodyPart} />
+    </>
+  )
+};
+
+export default Workouts;
 

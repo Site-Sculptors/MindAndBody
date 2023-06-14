@@ -7,6 +7,9 @@
   color: black !important;
 }
 
+.nav-link:active {
+  color: red !important;
+}
 .nav-link:hover {
   font-weight: bold;
   font-size: 93%;
