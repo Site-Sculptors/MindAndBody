@@ -1,10 +1,9 @@
 
 import "../Styles/App.css";
-import { useState } from "react";
 import { RecipeCardProps } from "../Interfaces/recipeCard.interface";
 
 
-const RecipeCard = ({ ingredients, instructions, title }: RecipeCardProps) => {
+const RecipeCard = ({ title }: RecipeCardProps) => {
 
   //const [selectedIndex, setSelectedIndex] = useState(-1);
 
