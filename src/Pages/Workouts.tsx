@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Exercises from '../Components/Exercises';
+import { ExerciseCardProps } from "../Interfaces/exerciseCard.interface";
 
 const Workouts = () => {
 
   // const [exercises, setExercises] = useState([]);
 
-  const [exercises, setExercises] = useState<string[]>([]);
-  const [bodyPart, setBodyPart] = useState('all');
+  const [exercises, setExercises] = useState<ExerciseCardProps[]>([]);
+  const [bodyPart] = useState('all');
 
   return (
     <>

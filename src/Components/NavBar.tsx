@@ -1,19 +1,19 @@
 import "../Styles/Header.css";
-import { Button, Nav, Navbar, Stack } from "react-bootstrap";
-import { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Button, Nav, Stack } from "react-bootstrap";
+//import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 //import { NavLink } from "react-router-dom";
 import logo from "/mind_and_body_logo.png";
 
 export default function NavBar() {
   const isActive = (path: string) => window.location.pathname === path;
 
-  const location = useLocation();
+  //  const location = useLocation();
 
-  const [extendNavbar, setExtendNavbar] = useState(false);
-  useEffect(() => {
-    setExtendNavbar(false);
-  }, [location]);
+  // const [extendNavbar, setExtendNavbar] = useState(false);
+  /*   useEffect(() => {
+      setExtendNavbar(false);
+    }, [location]); */
 
   return (
     <>

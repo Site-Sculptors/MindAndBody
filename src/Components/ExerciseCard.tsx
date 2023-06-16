@@ -1,19 +1,19 @@
 import "../Styles/App.css";
-import { Stack, Button, NavLink } from "react-bootstrap";
+import { Stack, Button } from "react-bootstrap";
 import { ExerciseCardProps } from "../Interfaces/exerciseCard.interface";
 
 
-const ExerciseCard: React.FC<ExerciseCardProps> = ({ cardProp }) => {
-  const {
-    bodyPart,
-    equipment,
-    gifUrl,
-    id,
-    name,
-    target } = cardProp;
+const ExerciseCard: React.FC<ExerciseCardProps> = ({ bodyPart, gifUrl, name, target }) => {
+  /*   const {
+      bodyPart,
+      gifUrl,
+      name,
+      id,
+      equipment,
+      target } = exercises; */
 
   return (
-    <div className="card p-2 m-5">
+    <div className="card p-2 m-1">
       {/* <NavLink className="exercise-card" to="{`/workout/${exercise.id}`} ">    */}
       <p
         style={{

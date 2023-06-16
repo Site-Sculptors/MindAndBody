@@ -1,9 +1,9 @@
 import yogaImage from "/mind_and_body_yoga.jpg";
 import "../Styles/Home.css";
-import { useState } from "react";
+//import { useState } from "react";
 
 export default function Home() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
   return (
     <div className="bg m-0 p-0">
       <div className="row row align-items-center m-5">
