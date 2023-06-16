@@ -1,7 +1,7 @@
 import ListGroup from "../Components/ListGroup.tsx";
 import RecipeCard from "../Components/RecipeCard.tsx";
 import { useState } from "react";
-import { exerciseOptions, GetData } from '../Services/GetData.tsx';
+//import { exerciseOptions, GetData } from '../Services/GetData.tsx';
 
 export default function Recipes() {
 

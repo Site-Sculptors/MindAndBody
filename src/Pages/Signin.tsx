@@ -3,7 +3,7 @@ import SigninForm from "../Components/SigninForm";
 
 const Signin = () => {
   return (
-    <div className="row row align-center align-items-center mt-5">
+    <div className="row row align-center align-items-center m-5">
       <h1 className="m-4 align-middle b">Sign In</h1>
       <div className="row" >
         <div className="col-12 col-md-7"   >
