@@ -10,9 +10,17 @@ export const youtubeOptions = {
   method: "GET",
   headers: {
     "X-RapidAPI-Host": "youtube-search-and-download.p.rapidapi.com",
-    "X-RapidAPI-Key": "f0021db587msh781fb1cbef39856p11c183jsn45521d5d1c85",
+    "X-RapidAPI-Key": "6ec2241d08mshc9f17c3bce4b106p141991jsnca2ab3cf927e",
   },
 };
+
+/* export const recipeOptions = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com",
+    "X-RapidAPI-Key": "6ec2241d08mshc9f17c3bce4b106p141991jsnca2ab3cf927e",
+  },
+}; */
 
 /* export const GetData = async (url, options) => {
   const res = await fetch(url, options);
@@ -31,18 +39,22 @@ export const GetData = async <T>(
   return data;
 };
 
-/* export const GetData = async (url: string, options: RequestInit): Promise<any> => {
-  const headers = new Headers();
-  headers.set('X-RapidAPI-Host', 'your-host-value');
-  headers.set('X-RapidAPI-Key', 'your-key-value');
+export const GetRecipesData = async (query: string) => {
+  const apiKey = "6ec2241d08mshc9f17c3bce4b106p141991jsnca2ab3cf927e";
+  const apiUrl = `https://edamam-recipe-search.p.rapidapi.com/search?q=${query}`;
 
-  const modifiedOptions: RequestInit = {
-    ...options,
-    headers: headers,
-  };
+  const response = await fetch(apiUrl, {
+    headers: {
+      "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com",
+      "X-RapidAPI-Key": apiKey,
+    },
+  });
 
-  const res = await fetch(url, modifiedOptions);
-  const data = await res.json();
+  if (!response.ok) {
+    throw new Error("Error fetching recipe data");
+  }
 
+  const data = await response.json();
+  console.log("recipeData:", data);
   return data;
-}; */
+};

@@ -1,15 +1,15 @@
 
 import "../Styles/App.css";
-import { RecipeCardProps } from "../Interfaces/recipeCard.interface";
+import { Recipe } from "../Interfaces/RecipeInterface";
 
-
-const RecipeCard = ({ title }: RecipeCardProps) => {
+const RecipeCard: React.FC<Recipe> = ({ label, image }) => {
 
   //const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <div className="col card recipe-card p-2"  >
-      <h5 className="col text-center align-start">{title}</h5>
+      <img className="card-img-top" src={image} alt={image} />
+      <h5 className="col text-center align-start">{label}</h5>
     </div>
   );
 }

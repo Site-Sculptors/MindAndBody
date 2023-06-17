@@ -5,7 +5,7 @@ import Home from "../Pages/Home";
 import Workouts from "../Pages/Workouts";
 import EatRight from "../Pages/EatRight";
 import Signin from "../Pages/Signin";
-import Recipes from "../Pages/Recipes";
+//import Recipes from "./Recipes";
 
 export default function MainBody() {
   return (
@@ -18,7 +18,7 @@ export default function MainBody() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signin" element={<Signin />} />
-        <Route path="/recipes" element={<Recipes />} />
+        {/* <Route path="/recipes" element={<Recipes />} /> */}
       </Routes>
     </div>
   );

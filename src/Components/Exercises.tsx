@@ -11,7 +11,7 @@ const Exercises: React.FC<ExercisesProps> = ({ exercises = [], setExercises, bod
     // const { exercises = [], setExercises, bodyPart } = exercisesProps;
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
-    const [exercisesPerPage] = useState(6);
+    const [exercisesPerPage] = useState(5);
     const [previousButtonDisabled, setPreviousButtonDisabled] = React.useState(false);
     const [nextButtonDisabled, setNextButtonDisabled] = React.useState(false);
 
@@ -69,7 +69,7 @@ const Exercises: React.FC<ExercisesProps> = ({ exercises = [], setExercises, bod
             <h1>Workouts</h1>
             {exercises.length === 0 && <p>No items found</p>}
 
-            <Stack direction="horizontal" gap={2} className="no-wrap  alignItems-center" >
+            <Stack direction="horizontal" gap={2} className="no-wrap d-flex align-items: stretch" >
                 {currentExercises.map((exercise, idx) => (
                     <ExerciseCard
                         key={idx}

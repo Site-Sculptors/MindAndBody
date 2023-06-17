@@ -1,6 +1,12 @@
-import { NavLink } from "react-router-dom";
+//import { NavLink } from "react-router-dom";
+import { useState } from 'react';
+import Recipes from "../Components/Recipes";
+import { RecipesCardProps } from "../Interfaces/RecipeInterface.ts";
 
 export default function EatRight() {
+
+  const hits = useState<RecipesCardProps[]>([]);
+
   return (
     <div className="row row align-items-center m-5">
       <div className="col-6">
@@ -10,8 +16,13 @@ export default function EatRight() {
           things to do, but with the right encouragement and the right menu, you
           will be able to get the body you've always wanted.
         </p>
+
+        <Recipes hits={hits}, setRecipes={setRecipes} />
+        {/* recipes={recipes} setRecipes={setRecipes} /> */}
       </div>
-      <div className="col-6">
+
+
+      {/* <div className="col-6">
         {" "}
         <NavLink to="/recipes" className={`nav-item nav-link mx-4 `}>
           <button
@@ -25,7 +36,7 @@ export default function EatRight() {
             Healthier Recipes
           </button>
         </NavLink>
-      </div>
+      </div> */}
     </div>
   );
 }
