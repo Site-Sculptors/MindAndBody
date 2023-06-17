@@ -40,7 +40,7 @@ export const GetData = async <T>(
 };
 
 export const GetRecipesData = async (query: string) => {
-  const apiKey = "6ec2241d08mshc9f17c3bce4b106p141991jsnca2ab3cf927e";
+  const apiKey = "b7daf45125msh06e8e5ac10b62a1p1bc5c7jsn268f87400520";
   const apiUrl = `https://edamam-recipe-search.p.rapidapi.com/search?q=${query}`;
 
   const response = await fetch(apiUrl, {

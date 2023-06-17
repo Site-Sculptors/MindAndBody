@@ -1,11 +1,18 @@
 //import { NavLink } from "react-router-dom";
-import { useState } from 'react';
+import { useState } from "react";
 import Recipes from "../Components/Recipes";
-import { RecipesCardProps } from "../Interfaces/RecipeInterface.ts";
+//import { RecipesProps } from "../Interfaces/recipes.interface.ts";
+import { RecipesCardProps, Recipe } from "../Interfaces/recipeCard.interface";
 
 export default function EatRight() {
+  //const hits = useState<RecipesCardProps[]>([]);
 
-  const hits = useState<RecipesCardProps[]>([]);
+  const [recipes, setRecipes] = useState<RecipesCardProps[]>([]);
+  const handleSelectedRecipe = (recipe: Recipe) => {
+    // Logic to handle the selected recipe
+    // This function will be called when a recipe is selected in the RecipesList component
+    console.log("Selected recipe:", recipe);
+  };
 
   return (
     <div className="row row align-items-center m-5">
@@ -17,10 +24,14 @@ export default function EatRight() {
           will be able to get the body you've always wanted.
         </p>
 
-        <Recipes hits={hits}, setRecipes={setRecipes} />
+        <Recipes
+          recipes={recipes}
+          setRecipes={setRecipes}
+          onSelectItem={handleSelectedRecipe}
+        />
+
         {/* recipes={recipes} setRecipes={setRecipes} /> */}
       </div>
-
 
       {/* <div className="col-6">
         {" "}

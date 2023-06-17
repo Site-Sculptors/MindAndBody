@@ -1,25 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import RecipeCard from './RecipeCard';
-import RecipesList from './RecipesList';
-import { RecipesCardProps } from '../Interfaces/RecipeInterface';
-import { Recipe } from '../Interfaces/RecipeInterface';
-import { GetRecipesData } from '../Services/GetData.ts';
-
+import React, { useEffect, useState } from "react";
+import RecipeCard from "./RecipeCard";
+import RecipesList from "./RecipesList";
+import { RecipesProps } from "../Interfaces/recipes.interface.ts";
+import {
+  RecipesCardProps,
+  Recipe,
+} from "../Interfaces/recipeCard.interface.ts";
+import { GetRecipesData } from "../Services/GetData.ts";
 
 //import { RecipesProps } from "../Interfaces/recipes.interface.ts";
-import Loader from './Loader';
+//import Loader from "./Loader";
 
-const Recipes: React.FC<RecipesCardProps> = ({ hits = [], setRecipes }) => {
-
+const Recipes: React.FC<RecipesProps> = ({ recipes = [], setRecipes }) => {
   //const [recipes, setRecipes] = useState<RecipesCardProps[]>();
   //const recipeData
   const meat = "chicken";
+
+  const [recipeData, setRecipeData] = useState<RecipesCardProps[]>([]);
 
   // const appetizers = ["Fat-Free Queso", "Shrimp Cocktail", "Low-Fat Mozzerella Sticks"];
   // const desserts = ["Gluten-Free CheeseCake", "Lowfat Mousse", "Strawberry Smoothies"];
   //const [totalPages, setTotalPages] = useState(0);
   // const [recipesPerPage] = useState(5);
-  // const [currentPage, setCurrentPage] = useState(1);
+  // const currentPage = 1;
+  //const [currentPage, setCurrentPage] = useState(1);
+  //const [totalPages, setTotalPages] = useState(0);
+  const [recipesPerPage] = useState(5);
   //const [selectedIndex, setSelectedIndex] = useState(-1);
   //const [selectedAppetizer, setSelectedAppetizer] = useState("");
 
@@ -29,25 +35,28 @@ const Recipes: React.FC<RecipesCardProps> = ({ hits = [], setRecipes }) => {
     //console.log(recipe.label);
 
     setSelectedRecipe(recipe);
-  }
-
+  };
 
   useEffect(() => {
-
     const fetchData = async () => {
       try {
+        const recipeDataTemp = await GetRecipesData(meat);
+        setRecipeData(recipeDataTemp);
 
-        let recipeData: RecipesCardProps[] = [];
+        // let recipeData: RecipesCardProps[] = [];
 
-        recipeData = await GetRecipesData(meat);
-
+        // recipeData = await GetRecipesData(meat);
+        // const transformedRecipes = recipeData.hits.map((hit) => hit.recipe);
+        // setRecipes(transformedRecipes);
         console.log("rawData:", { recipeData });
 
-        setRecipes(recipeData);
+        // setRecipes(recipeData);
+
+        console.log("recipes:", { recipes });
 
         console.log("recipeData:", { recipeData });
       } catch (error) {
-        console.error('Error fetching recipe data:', error);
+        console.error("Error fetching recipe data:", error);
       }
     };
 
@@ -56,10 +65,14 @@ const Recipes: React.FC<RecipesCardProps> = ({ hits = [], setRecipes }) => {
 
   // const indexOfLastRecipe = currentPage * recipesPerPage;
   // const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
-  // const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
 
-  const currentRecipes = Array.isArray(hits) ? hits : [];//.slice(indexOfFirstRecipe, indexOfLastRecipe) : [];
+  // const currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
 
+  //  const currentRecipes = Array.isArray(recipeData) ? recipeData : [];
+
+  /* const currentRecipes = Array.isArray(recipes)
+    ? recipes.slice(indexOfFirstRecipe, indexOfLastRecipe)
+    : []; */
 
   // if (!recipeData.length) return <Loader />;
 
@@ -72,12 +85,19 @@ const Recipes: React.FC<RecipesCardProps> = ({ hits = [], setRecipes }) => {
       </div>
       <div className="row m-5">
         <div className="col-auto mx-5">
-          <RecipesList hits={currentRecipes?.hits} onSelectItem={handleSelectedRecipe} />
+          <RecipesList
+            recipes={recipeData}
+            setRecipes={setRecipes}
+            onSelectItem={handleSelectedRecipe}
+          />
         </div>
-        <RecipeCard label={selectedRecipe?.label} image={selectedRecipe?.image} />
+        <RecipeCard
+          label={selectedRecipe?.label ?? ""}
+          image={selectedRecipe?.image ?? ""}
+        />
       </div>
     </>
   );
-}
+};
 
 export default Recipes;
