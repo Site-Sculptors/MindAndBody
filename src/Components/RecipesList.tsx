@@ -1,10 +1,6 @@
-import { Hit, Recipe } from "../Interfaces/recipeCard.interface";
+import { RecipesProps } from "../Interfaces/recipes.interface";
+import { Hit, Recipe, RecipesCardProps } from "../Interfaces/recipes.interface";
 import { ListGroup, Stack } from "react-bootstrap";
-
-interface RecipesProps {
-  recipes: Hit[]; // Update the type to Hit[]
-  onSelectItem: (recipe: Recipe) => void;
-}
 
 const RecipesList: React.FC<RecipesProps> = ({ recipes, onSelectItem }) => {
   const handleSelect = (recipe: Recipe) => {
@@ -13,14 +9,16 @@ const RecipesList: React.FC<RecipesProps> = ({ recipes, onSelectItem }) => {
 
   return (
     <ListGroup>
-      {recipes.map((hit: Hit, index: number) => (
+      {recipes.map((recipe: RecipesCardProps, index: number) => (
         <ListGroup.Item key={index}>
-          <Stack gap={3}>
-            <div onClick={() => handleSelect(hit.recipe)}>
-              <img src={hit.recipe.image} alt={hit.recipe.label} />
-              <div>{hit.recipe.label}</div>
-            </div>
-          </Stack>
+          {recipe.hits.map((hit: Hit) => (
+            <Stack gap={3} key={hit.recipe.uri}>
+              <div onClick={() => handleSelect(hit.recipe)}>
+                <img src={hit.recipe.image} alt={hit.recipe.label} />
+                <div>{hit.recipe.label}</div>
+              </div>
+            </Stack>
+          ))}
         </ListGroup.Item>
       ))}
     </ListGroup>

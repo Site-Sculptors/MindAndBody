@@ -1,16 +1,24 @@
-.rounded-circle {
+.ingr {
+  background-color: "yellow";
+  border-radius: "20";
+}
+
+.rounded-circle,
+.pag-button,
+.ingr-button {
   background-image: linear-gradient(170deg, #f8d3c9, #ff977d);
 }
 
-.rounded-circle:hover {
+.rounded-circle,
+.pag-button:hover {
   background-image: linear-gradient(170deg, #ff977d, #f8d3c9);
   font-size: 120%;
 }
 
-.list-group{
+.list-group {
   cursor: pointer;
 }
 
-.recipe-card{
-  background-color:rgba(0,0,0,0.05) !important;
+.recipe-card {
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }

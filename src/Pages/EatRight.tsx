@@ -1,53 +1,79 @@
+import slamonPlateImage from "/mind_and_body_salmon_plate.jpg";
+import { Stack, Button } from "react-bootstrap";
+import "../Styles/App.css";
 //import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import Recipes from "../Components/Recipes";
+//import { useState } from "react";
+//import { Recipes } from "../Components/Recipes";
 //import { RecipesProps } from "../Interfaces/recipes.interface.ts";
-import { RecipesCardProps, Recipe } from "../Interfaces/recipeCard.interface";
+//import { RecipesCardProps, Recipe } from "../Interfaces/recipeCard.interface";
 
 export default function EatRight() {
-  //const hits = useState<RecipesCardProps[]>([]);
-
-  const [recipes, setRecipes] = useState<RecipesCardProps[]>([]);
-  const handleSelectedRecipe = (recipe: Recipe) => {
-    // Logic to handle the selected recipe
-    // This function will be called when a recipe is selected in the RecipesList component
-    console.log("Selected recipe:", recipe);
-  };
-
   return (
     <div className="row row align-items-center m-5">
-      <div className="col-6">
-        <h1 className="m-4 align-middle b">Eat Right</h1>
+      <div className="col">
+        <img
+          src={slamonPlateImage}
+          alt="Salmon Plate Pic"
+          width="600px"
+          className="img-fluid rounded hover-overlay"
+        />
+        <h1 className="m-4 align-middle b">Eat Right</h1>{" "}
         <p>
           Maintaining a healthy eating regimen is one of the most difficult
           things to do, but with the right encouragement and the right menu, you
           will be able to get the body you've always wanted.
         </p>
-
-        <Recipes
-          recipes={recipes}
-          setRecipes={setRecipes}
-          onSelectItem={handleSelectedRecipe}
-        />
-
-        {/* recipes={recipes} setRecipes={setRecipes} /> */}
       </div>
-
-      {/* <div className="col-6">
-        {" "}
-        <NavLink to="/recipes" className={`nav-item nav-link mx-4 `}>
-          <button
-            className="btn rounded-circle fw-bold mt-5"
-            style={{
-              borderRadius: "50% !important",
-              height: "150px",
-              width: "150px",
-              borderColor: "#e4502b",
-            }}>
-            Healthier Recipes
-          </button>
-        </NavLink>
-      </div> */}
+      <div className="col-4">
+        <h3 className="m-4 text-align-center">Main Ingredient</h3>
+        <div
+          className="ing-array flex-fill start-center justify-content-between p-4"
+          style={{ backgroundColor: "#FBBBAB", borderRadius: "50px" }}>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Beans
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Beef
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Chicken
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Fish
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Fruit
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Beans
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Noodles
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Chicken
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Lamb
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Pasta
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Pork
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Noodles
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Vegetables
+          </Button>
+          <Button className="btn ingr-button btn-lg rounded-circle m-2">
+            Turkey
+          </Button>
+        </div>
+        <div className="">{/* <Recipes /> */}</div>
+      </div>
     </div>
   );
 }

@@ -20,11 +20,21 @@ const Exercises: React.FC<ExercisesProps> = ({
     React.useState(false);
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(false);
 
-  const handlePaginationButtonClick = (param: number) => {
+  const handlePaginationButtonClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    param: number
+  ) => {
+    e.preventDefault();
+
     if (currentPage < 2) {
       setPreviousButtonDisabled(true);
-    } else if (currentPage >= totalPages) {
+    } else {
+      setPreviousButtonDisabled(false);
+    }
+    if (currentPage >= totalPages) {
       setNextButtonDisabled(true);
+    } else {
+      setNextButtonDisabled(false);
     }
 
     setCurrentPage(currentPage + param);
@@ -34,7 +44,7 @@ const Exercises: React.FC<ExercisesProps> = ({
                 const lastIndex = pageIndex * exercisesPerPage + exercisesPerPage;
                 const currentExercises = Array.isArray(exercises) ? exercises.slice(indexOfFirstExercise, indexOfLastExercise) : []; */
     // showData(data.slice(firstIndex, lastIndex));
-  };
+  }; //,[currentPage]);
 
   useEffect(() => {
     const fetchExercisesData = async () => {
@@ -96,30 +106,47 @@ const Exercises: React.FC<ExercisesProps> = ({
           />
         ))}
       </Stack>
-      <Stack className="alignItems-center m-0">
+      {/*    <Stack className="alignItems-center m-0">
         {exercises.length > 6 && (
           <Pagination size="lg" className="d-flex justify-content-center">
-            {currentPage}
+            {" "}
+            <Pagination>
+              <Pagination.Prev />
+              <Pagination.Ellipsis />
+              <Pagination.Item>{currentPage - 3}</Pagination.Item>
+              <Pagination.Item>{currentPage - 2}</Pagination.Item>
+              <Pagination.Item>{currentPage - 1}</Pagination.Item>
+              <Pagination.Item className="fw-6">{currentPage}</Pagination.Item>
+              <Pagination.Item>{currentPage + 1}</Pagination.Item>
+              <Pagination.Item>{currentPage + 2}</Pagination.Item>
+              <Pagination.Item>{currentPage + 3}</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Next />
+            </Pagination>
           </Pagination>
         )}
-      </Stack>
+      </Stack> */}
       {exercises.length > 6 && (
         // <div className="text-center">
         <Stack
           direction="horizontal"
           gap={2}
           id="button-container"
-          className="mt-5 justify-content-center">
+          className="mt-5 justify-content-center justify-end">
           <Button
+            disabled={previousButtonDisabled}
             aria-disabled={previousButtonDisabled}
-            onClick={() => handlePaginationButtonClick(-1)}
-            className="btn btn-primary me-1">
+            onClick={(e) => handlePaginationButtonClick(e, -1)}
+            className="btn pag-button me-1"
+            style={{}}>
             Previous
           </Button>
+          <h1 className="mx-5">{currentPage} </h1>
           <Button
+            disabled={nextButtonDisabled}
             aria-disabled={nextButtonDisabled}
-            onClick={() => handlePaginationButtonClick(1)}
-            className="btn btn-primary px-4">
+            onClick={(e) => handlePaginationButtonClick(e, 1)}
+            className="btn pag-button px-4">
             Next
           </Button>
         </Stack>
