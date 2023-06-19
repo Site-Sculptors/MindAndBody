@@ -63,11 +63,6 @@ export const ExerciseList: React.FC<ExercisesProps> = ({
     useEffect(() => {
         const fetchExercisesData = async () => {
             let exercisesData: ExerciseCardProps[] = [];
-
-            const passedBodyPart = bodyPart;
-
-            const fixedBodyPart = bodyPart.toString;
-
             let url: string;
 
             if (bodyPart === "all") {
@@ -78,8 +73,6 @@ export const ExerciseList: React.FC<ExercisesProps> = ({
             }
 
             exercisesData = await GetData<ExerciseCardProps[]>(url, exerciseOptions);
-
-            // https://exercisedb.p.rapidapi.com/exercises/bodyPart/back';
 
             setTotalPages(Math.ceil(exercisesData.length / exercisesPerPage));
 

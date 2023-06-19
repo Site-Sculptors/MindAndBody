@@ -4,16 +4,9 @@ import { ExerciseCardProps } from "../Interfaces/exerciseCard.interface";
 
 
 const ExerciseCard: React.FC<ExerciseCardProps> = ({ bodyPart, gifUrl, name, target }) => {
-  /*   const {
-      bodyPart,
-      gifUrl,
-      name,
-      id,
-      equipment,
-      target } = exercises; */
 
   return (
-    <Card className="card p-2 m-1 h-100 w-100">
+    <Card className="card  exercise-card p-2 m-1 h-100 w-100">
       {/* <NavLink className="exercise-card" to="{`/workout/${exercise.id}`} ">    */}
       <p
         style={{

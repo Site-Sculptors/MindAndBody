@@ -1,0 +1,15 @@
+export const MainIngedients: string[] = [
+  "Beans",
+  "Beef",
+  "Chicken",
+  "Fish",
+  "Fruit",
+  "Lamb",
+  "Noodles",
+  "Pasta",
+  "Pork",
+  "Rice",
+  "Seafood",
+  "Turkey",
+  "Vegetables",
+];

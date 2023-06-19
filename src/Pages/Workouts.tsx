@@ -1,24 +1,17 @@
-//import { useState } from "react"; 
+import { BodyParts } from "../Types/ExerciseTypes";
 import workoutImage from "/mind_and_body_workout.jpg";
-//import { Exercises } from "../Components/Exercises";
 import { useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { ButtonCloud } from "../Components/ButtonCloud";
 import "../Styles/App.css";
-//import { ExerciseCardProps } from "../Interfaces/exerciseCard.interface";
 
 export const Workouts = () => {
-  // const [exercises, setExercises] = useState([]);
-
-  // const [exercises, setExercises] = useState<ExerciseCardProps[]>([]);
-  // const [bodyPart] = useState("all");
-
   const navigate = useNavigate();
 
-  const handleButtonButtonClick = (param: string) => {
+  const handleButtonClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    param: string) => {
     navigate(`/exercises/${encodeURIComponent(param)}`);
   };
-
-  const bodyParts: string[] = ["back", "cardio", "chest", "lower arms", "lower legs", "neck", "shoulders", "upper arms", "upper legs", "wrist"];
 
   return (
     <div className="row m-5">
@@ -38,46 +31,10 @@ export const Workouts = () => {
       </div>
       <div className="col justify-center">
         <h3 className="m-4 text-center">Muscle Groups</h3>
-        <div className="ing-array flex-fill start-center justify-content-between p-4"
-          style={{ backgroundColor: "rgb(251, 187, 171, 30%)", borderRadius: "50px" }}>
-          {bodyParts.map((bodyPart) => (
-            <Button
-              key={bodyPart}
-              onClick={() => handleButtonButtonClick(bodyPart)}
-              className="btn ingr-button btn-lg rounded-circle m-2 text-capitalize"
-            >
-              {bodyPart}
-            </Button>
-          ))}
-        </div>
+        <ButtonCloud nameArray={BodyParts} handleButtonClick={handleButtonClick} />
         <p className="text-center">Please choose the muscle group you want exercises for.</p>
-        <div className="">{/* <Recipes /> */}</div>
       </div>
     </div>
-    /*  <div className="p-4">
-       {/* <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />  
- 
- {/* <div className="col-6">
-   {" "}
-   <NavLink to="/exercises" className={`nav-item nav-link mx-4 `}>
-     <button
-       className="btn rounded-circle fw-bold mt-5"
-       style={{
-         borderRadius: "50% !important",
-         height: "150px",
-         width: "150px",
-         borderColor: "#e4502b",
-       }}>
-       Exercises
-     </button>
-   </NavLink>
- </div>
- { <Exercises
-         exercises={exercises}
-         setExercises={setExercises}
-         bodyPart={bodyPart}
-       /> 
-     </div >  }*/
   );
 }
 

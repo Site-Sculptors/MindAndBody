@@ -1,5 +1,6 @@
 import salmonPlateImage from "/mind_and_body_salmon_plate.jpg";
-import { Button } from "react-bootstrap";
+import { ButtonCloud } from "../Components/ButtonCloud";
+import { MainIngedients } from "../Types/RecipeTypes";
 import "../Styles/App.css";
 //import { NavLink } from "react-router-dom";
 //import { useState } from "react";
@@ -7,7 +8,20 @@ import "../Styles/App.css";
 //import { RecipesProps } from "../Interfaces/recipes.interface.ts";
 //import { RecipesCardProps, Recipe } from "../Interfaces/recipeCard.interface";
 
+
+
 export default function EatRight() {
+
+  const handleButtonClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    param: string) => {
+
+    console.log(param);
+    // navigate(`/exercises/${encodeURIComponent(param)}`);
+  };
+
+
+
   return (
     <div className="row m-5">
       <div className="col-5">
@@ -26,52 +40,7 @@ export default function EatRight() {
       </div>
       <div className="col justify-center">
         <h3 className="m-4 text-center">Main Ingredient</h3>
-        <div
-          className="ing-array flex-fill start-center justify-content-between p-4"
-          style={{ backgroundColor: "rgb(251, 187, 171, 30%)", borderRadius: "50px" }}>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Beans
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Beef
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Chicken
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Fish
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Fruit
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Beans
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Noodles
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Chicken
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Lamb
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Pasta
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Pork
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Noodles
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Vegetables
-          </Button>
-          <Button className="btn ingr-button btn-lg rounded-circle m-2">
-            Turkey
-          </Button>
-        </div>
+        <ButtonCloud nameArray={MainIngedients} handleButtonClick={handleButtonClick} />
         <p className="text-center">Please choose the main ingredient you want for your recipes.</p>
         <div className="">{/* <Recipes /> */}</div>
       </div>
