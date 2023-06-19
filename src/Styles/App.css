@@ -1,7 +1,7 @@
-.ingr {
-  background-color: "yellow";
+/* .ingr {
+  background-color: "rgb(251, 187, 171)";
   border-radius: "20";
-}
+} */
 
 .rounded-circle,
 .pag-button,
@@ -9,7 +9,7 @@
   background-image: linear-gradient(170deg, #f8d3c9, #ff977d);
 }
 
-.rounded-circle,
+.rounded-circle:hover,
 .pag-button:hover {
   background-image: linear-gradient(170deg, #ff977d, #f8d3c9);
   font-size: 120%;

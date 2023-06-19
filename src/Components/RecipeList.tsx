@@ -1,6 +1,6 @@
 import React from "react";
 import { RecipesCardProps } from "../Interfaces/recipes.interface";
-import { RecipeCard } from "./RecipeCard";
+//import { RecipeCard } from "./RecipeCard";
 
 const RecipeList: React.FC<RecipesCardProps> = ({ hits }) => {
   return (

@@ -2,7 +2,7 @@ export const exerciseOptions = {
   method: "GET",
   headers: {
     "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-    "X-RapidAPI-Key": "6ec2241d08mshc9f17c3bce4b106p141991jsnca2ab3cf927e", //"f0021db587msh781fb1cbef39856p11c183jsn45521d5d1c85", // process.env.RAPID_API_KEY,
+    "X-RapidAPI-Key": "6ec2241d08mshc9f17c3bce4b106p141991jsnca2ab3cf927e", // import.meta.env.RAPID_API_KEY,
   },
 };
 
@@ -39,7 +39,7 @@ export const GetData = async <T>(
   return data;
 };
 
-export const GetEdamamRecipesData = async () => {
+/* export const GetEdamamRecipesData = async () => {
   //query: string) => {
   // const base_url = "https://api.edamam.com";
   const app_id = "6f2bef3d";
@@ -55,7 +55,7 @@ export const GetEdamamRecipesData = async () => {
     },
   });
 };
-
+ */
 export const GetRecipesData = async (query: string) => {
   const apiKey = "b7daf45125msh06e8e5ac10b62a1p1bc5c7jsn268f87400520";
   const apiUrl = `https://edamam-recipe-search.p.rapidapi.com/search?q=${query}`;
