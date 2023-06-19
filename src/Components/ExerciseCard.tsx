@@ -1,26 +1,20 @@
 import "../Styles/App.css";
-import { Stack, Button } from "react-bootstrap";
+import { Card, Stack, Button } from "react-bootstrap";
 import { ExerciseCardProps } from "../Interfaces/exerciseCard.interface";
 
 
 const ExerciseCard: React.FC<ExerciseCardProps> = ({ bodyPart, gifUrl, name, target }) => {
-  /*   const {
-      bodyPart,
-      gifUrl,
-      name,
-      id,
-      equipment,
-      target } = exercises; */
 
   return (
-    <div className="card p-2 m-1">
+    <Card className="card  exercise-card p-2 m-1 h-100 w-100">
       {/* <NavLink className="exercise-card" to="{`/workout/${exercise.id}`} ">    */}
       <p
         style={{
           color: "#000",
           fontWeight: "bold",
           textTransform: "capitalize",
-          textAlign: "center"
+          textAlign: "center",
+          height: "3.5em"
         }}
       >
         {name}
@@ -52,7 +46,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({ bodyPart, gifUrl, name, tar
       </Stack>
 
       {/* </NavLink> */}
-    </div>
+    </Card>
   );
 };
 

@@ -18,7 +18,7 @@ export default function NavBar() {
   return (
     <>
       <Nav className="navbar navbar-expand-md fixed-top mb-0 p-0 p-md-3 align-items-center">
-        <Stack direction="horizontal" gap={0} mx-0 >
+        <Stack direction="horizontal" gap={0} className="mx-0">
           <p className="my-0 align-middle">Mind</p>
           <img
             src={logo}
@@ -45,38 +45,44 @@ export default function NavBar() {
           id="nav">
           <NavLink
             to="/"
-            className={`nav-item nav-link mx-1 ${isActive("/") ? "active" : ""
-              }`}>
+            className={`nav-item nav-link mx-1 ${
+              isActive("/") ? "active" : ""
+            }`}>
             Home
           </NavLink>
           <NavLink
             to="/eatRight"
-            className={`nav-item nav-link  mx-1  ${isActive("/eatRight") ? "active" : ""
-              }`}>
+            className={`nav-item nav-link  mx-1  ${
+              isActive("/eatRight") ? "active" : ""
+            }`}>
             Eat Right
           </NavLink>
           <NavLink
             to="/workouts"
-            className={`nav-item nav-link  mx-1  ${isActive("/workouts") ? "active" : ""
-              }`}>
+            className={`nav-item nav-link  mx-1  ${
+              isActive("/workouts") ? "active" : ""
+            }`}>
             Workouts
           </NavLink>
           <NavLink
             to="/about"
-            className={`nav-item nav-link  mx-1  ${isActive("/about") ? "active" : ""
-              }`}>
+            className={`nav-item nav-link  mx-1  ${
+              isActive("/about") ? "active" : ""
+            }`}>
             About
           </NavLink>
           <NavLink
             to="/contact"
-            className={`nav-item nav-link  mx-1  ${isActive("/contact") ? "active" : ""
-              }`}>
+            className={`nav-item nav-link  mx-1  ${
+              isActive("/contact") ? "active" : ""
+            }`}>
             Contact
           </NavLink>
           <NavLink
             to="/signin"
-            className={`nav-item nav-link me-2 ms-5 ${isActive("/signin") ? "active" : ""
-              }`}>
+            className={`nav-item nav-link me-2 ms-5 ${
+              isActive("/signin") ? "active" : ""
+            }`}>
             Sign In
           </NavLink>
         </div>
