@@ -42,11 +42,7 @@ export const GetData = async <T>(
 /* export const GetEdamamRecipesData = async () => {
   //query: string) => {
   // const base_url = "https://api.edamam.com";
-  const app_id = "6f2bef3d";
-  const app_key = "e596b593b3d338818b8fe348cfc0ab8d";
-  // const app_extension = "/api/recipes/v2 ";
-  const full_url =
-    "https://api.edamam.com/api/food-database/parser?app_id=6f2bef3d&app_key=e596b593b3d338818b8fe348cfc0ab8d&ingr=${query}";
+ 
 
   const response = await fetch(full_url, {
     headers: {
