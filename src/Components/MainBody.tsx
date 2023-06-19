@@ -2,8 +2,9 @@ import { Route, Routes } from "react-router-dom";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import Home from "../Pages/Home";
-import Workouts from "../Pages/Workouts";
+import { Workouts } from "../Pages/Workouts";
 import EatRight from "../Pages/EatRight";
+import { Exercises } from "../Pages/Exercises";
 import Signin from "../Pages/Signin";
 //import Recipes from "./Recipes";
 
@@ -17,6 +18,7 @@ export default function MainBody() {
         <Route path="/workouts" element={<Workouts />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/exercises/:bodyPart" element={<Exercises />} />
         <Route path="/signin" element={<Signin />} />
         {/* <Route path="/recipes" element={<Recipes />} /> */}
       </Routes>

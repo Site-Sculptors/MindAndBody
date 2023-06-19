@@ -1,5 +1,5 @@
-import slamonPlateImage from "/mind_and_body_salmon_plate.jpg";
-import { Stack, Button } from "react-bootstrap";
+import salmonPlateImage from "/mind_and_body_salmon_plate.jpg";
+import { Button } from "react-bootstrap";
 import "../Styles/App.css";
 //import { NavLink } from "react-router-dom";
 //import { useState } from "react";
@@ -9,10 +9,10 @@ import "../Styles/App.css";
 
 export default function EatRight() {
   return (
-    <div className="row row align-items-center m-5">
-      <div className="col">
+    <div className="row m-5">
+      <div className="col-5">
         <img
-          src={slamonPlateImage}
+          src={salmonPlateImage}
           alt="Salmon Plate Pic"
           width="600px"
           className="img-fluid rounded hover-overlay"
@@ -24,11 +24,11 @@ export default function EatRight() {
           will be able to get the body you've always wanted.
         </p>
       </div>
-      <div className="col-4">
-        <h3 className="m-4 text-align-center">Main Ingredient</h3>
+      <div className="col justify-center">
+        <h3 className="m-4 text-center">Main Ingredient</h3>
         <div
           className="ing-array flex-fill start-center justify-content-between p-4"
-          style={{ backgroundColor: "#FBBBAB", borderRadius: "50px" }}>
+          style={{ backgroundColor: "rgb(251, 187, 171, 30%)", borderRadius: "50px" }}>
           <Button className="btn ingr-button btn-lg rounded-circle m-2">
             Beans
           </Button>
@@ -72,6 +72,7 @@ export default function EatRight() {
             Turkey
           </Button>
         </div>
+        <p className="text-center">Please choose the main ingredient you want for your recipes.</p>
         <div className="">{/* <Recipes /> */}</div>
       </div>
     </div>
